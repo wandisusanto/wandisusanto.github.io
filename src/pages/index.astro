@@ -63,13 +63,13 @@ const projects = [
   },
 ];
 
-// Add `role` / `period` fields here to show them on the timeline.
 const experience = [
-  { org: "MyBankStatementConverter.com", detail: "Founder & solo developer" },
-  { org: "Traveloka", detail: "Machine Learning · Data Science" },
-  { org: "Alibaba / Lazada", detail: "Machine Learning · Data Science" },
-  { org: "AstraZeneca", detail: "Machine Learning · Data Science" },
-  { org: "Max Planck Institute for Informatics", detail: "Graduate studies & research · Germany" },
+  { org: "MyBankStatementConverter.com", role: "Founder & solo developer" },
+  { org: "Doctor Anywhere", role: "Head of AI & Data Science", location: "Singapore" },
+  { org: "Alibaba / Lazada", role: "Senior Manager, Machine Learning & Data Science", location: "Singapore" },
+  { org: "Traveloka", role: "Principal Data Scientist", location: "Singapore" },
+  { org: "AstraZeneca", role: "Lead Data Scientist", location: "Germany" },
+  { org: "Max Planck Institute for Informatics", role: "Graduate studies & research", location: "Germany" },
 ];
 
 ---
@@ -226,7 +226,9 @@ const experience = [
               <span class="absolute top-1.5 -left-[37px] size-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_var(--color-ink),0_0_16px_rgb(52_211_153/0.7)]"></span>
               <Reveal client:load delay={i * 0.05}>
                 <h3 class="text-lg font-medium text-white [overflow-wrap:anywhere]">{e.org}</h3>
-                <p class="mt-1 text-sm text-mist">{e.detail}</p>
+                <p class="mt-1 text-sm text-slate-300">
+                  {e.role}{e.location && <span class="text-mist"> · {e.location}</span>}
+                </p>
               </Reveal>
             </li>
           ))}
