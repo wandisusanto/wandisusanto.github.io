@@ -59,6 +59,19 @@ section[id] {
   }
 }
 
+/* Hero entrance: pure CSS so it plays on first paint, without waiting for JS */
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(8px);
+  }
+}
+
 .text-gradient {
   background: linear-gradient(110deg, #6ee7b7, #2dd4bf 45%, #67e8f9);
   -webkit-background-clip: text;
@@ -85,7 +98,8 @@ section[id] {
   html {
     scroll-behavior: auto;
   }
-  .aurora {
+  .aurora,
+  .rise {
     animation: none;
   }
   .card,

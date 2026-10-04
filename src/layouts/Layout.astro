@@ -3,8 +3,33 @@ import "../styles/global.css";
 
 const title = "Wandi Susanto — ML Engineer, Data Scientist & Tech Entrepreneur";
 const description =
-  "Tech entrepreneur and Machine Learning Engineer & Data Scientist with 16+ years of experience in Germany and Singapore. Available for fullstack, e-commerce, AI/ML, data science and automation projects.";
-const avatar = "https://github.com/wandisusanto.png";
+  "Wandi Susanto: tech entrepreneur, ML Engineer & Data Scientist with 16+ years in Germany and Singapore. Hire me for AI/ML, data, fullstack & automation.";
+const ogImage = new URL("/og.png", Astro.site).href;
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Wandi Susanto",
+  url: Astro.site?.href,
+  image: "https://github.com/wandisusanto.png",
+  jobTitle: "Machine Learning Engineer & Data Scientist",
+  description,
+  alumniOf: { "@type": "ResearchOrganization", name: "Max Planck Institute for Informatics" },
+  knowsAbout: [
+    "Machine Learning",
+    "Data Science",
+    "Artificial Intelligence",
+    "Fullstack Web Development",
+    "Mobile App Development",
+    "E-commerce",
+    "Workflow Automation",
+  ],
+  sameAs: [
+    "https://id.linkedin.com/in/wandisusanto",
+    "https://github.com/wandisusanto",
+    "https://x.com/wandikang",
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,12 +43,17 @@ const avatar = "https://github.com/wandisusanto.png";
     <link rel="canonical" href={Astro.site} />
     <meta name="theme-color" content="#07090c" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wandi Susanto" />
     <meta property="og:url" content={Astro.site} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={avatar} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wandi Susanto — ML Engineer, Data Scientist & Tech Entrepreneur" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@wandikang" />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

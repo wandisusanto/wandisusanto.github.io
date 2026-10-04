@@ -106,7 +106,7 @@ const experience = [
       </div>
 
       <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <Reveal client:load>
+        <div class="rise">
           <div class="relative mx-auto size-32 sm:size-40">
             <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-400 via-teal-400 to-cyan-400 opacity-70 blur-md"></div>
             <img
@@ -114,12 +114,13 @@ const experience = [
               alt="Portrait of Wandi Susanto"
               width="160"
               height="160"
+              fetchpriority="high"
               class="relative size-full rounded-full border-2 border-ink object-cover"
             />
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal client:load delay={0.1}>
+        <div class="rise" style="--d: 0.1s">
           <p class="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-xs font-medium tracking-wide text-emerald-300">
             <span class="size-1.5 animate-pulse rounded-full bg-emerald-400"></span>
             Open to projects & partnerships
@@ -128,9 +129,9 @@ const experience = [
             Hi, I'm Wandi.<br />
             <span class="font-serif text-5xl font-normal italic sm:text-7xl"><span class="text-gradient">I build intelligent products.</span></span>
           </h1>
-        </Reveal>
+        </div>
 
-        <Reveal client:load delay={0.2}>
+        <div class="rise" style="--d: 0.2s">
           <p class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
             Tech entrepreneur and <span class="text-slate-200">Machine Learning Engineer & Data Scientist</span> with
             over 16 years of professional experience in Germany and Singapore, at companies like{" "}
@@ -140,9 +141,9 @@ const experience = [
             <a href="https://mybankstatementconverter.com" target="_blank" rel="noopener" class="text-emerald-300 underline decoration-emerald-400/30 underline-offset-4 hover:decoration-emerald-300">MyBankStatementConverter.com</a>.
             In my free time, I enjoy drawing and painting.
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal client:load delay={0.3}>
+        <div class="rise" style="--d: 0.3s">
           <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
             {socials.map((s) => (
               <a
@@ -160,7 +161,7 @@ const experience = [
           <p class="mx-auto mt-8 max-w-xl text-sm text-mist">
             Looking to hire a developer, bring in an expert, or explore a partnership? <a href="#contact" class="font-medium text-emerald-300 hover:text-emerald-200">Let's talk →</a>
           </p>
-        </Reveal>
+        </div>
       </div>
     </section>
 
