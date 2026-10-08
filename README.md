@@ -11,7 +11,7 @@ It's a single-page static site with a dark theme, built with Astro and hosted on
 |---|---|
 | Framework | [Astro 7](https://astro.build) (static output, no server) |
 | Styling | [Tailwind CSS 4](https://tailwindcss.com) via `@tailwindcss/vite`, plus a few custom CSS effects (aurora, grid, glass cards) |
-| Animation | [Motion](https://motion.dev) (Framer Motion) in a single React 19 island for scroll-reveal |
+| Animation | CSS transitions plus a tiny inline `IntersectionObserver` script for scroll-reveal (no JS framework) |
 | Language | TypeScript |
 | Fonts | Google Fonts: Inter (body), Instrument Serif (accent headings) |
 | Icons | Inline SVG (Simple Icons for brands, Lucide for services) with no icon dependency |
@@ -45,15 +45,13 @@ npm run dev
 ├── public/
 │   └── favicon.svg                # "WS" monogram favicon (copied as-is to the site root)
 ├── src/
-│   ├── components/
-│   │   └── Reveal.tsx             # Motion wrapper: fade/blur-in on scroll, respects reduced motion
 │   ├── layouts/
-│   │   └── Layout.astro           # <html>/<head>: title, SEO + Open Graph meta, fonts, global CSS
+│   │   └── Layout.astro           # <html>/<head>: title, SEO + Open Graph meta, fonts, scroll-reveal script
 │   ├── pages/
 │   │   └── index.astro            # The whole page: nav, about, services, projects, experience, contact
 │   └── styles/
 │       └── global.css             # Tailwind import, theme tokens, custom effects
-├── astro.config.mjs               # Site URL, React integration, Tailwind Vite plugin
+├── astro.config.mjs               # Site URL, Tailwind Vite plugin
 ├── package.json
 └── tsconfig.json
 ```

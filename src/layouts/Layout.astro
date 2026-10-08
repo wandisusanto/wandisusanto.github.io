@@ -19,6 +19,12 @@ const person = {
     "Machine Learning",
     "Data Science",
     "Artificial Intelligence",
+    "Multi-agent Systems",
+    "Chatbots",
+    "Personalization",
+    "Natural Language Processing",
+    "Computer Vision",
+    "Large Language Models",
     "Fullstack Web Development",
     "Mobile App Development",
     "E-commerce",
@@ -54,6 +60,23 @@ const person = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@wandikang" />
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script is:inline>
+      // Hide .reveal elements only when JS runs, then fade each in as it scrolls into view.
+      document.documentElement.classList.add("js");
+      addEventListener("DOMContentLoaded", () => {
+        const io = new IntersectionObserver(
+          (entries) =>
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            }),
+          { rootMargin: "0px 0px -60px 0px" },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
