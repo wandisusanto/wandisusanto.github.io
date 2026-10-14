@@ -40,7 +40,7 @@ const stats = [
   { value: "Max Planck", label: "Institute alumnus" },
 ];
 
-const formerEmployers = ["Alibaba/Lazada", "AstraZeneca", "Traveloka", "Doctor Anywhere"];
+const formerEmployers = ["Alibaba/Lazada", "AstraZeneca", "Traveloka"];
 
 const offerings = [
   { title: "Strategic Consulting", desc: "Tech roadmaps and digital strategy to scale your business." },
@@ -304,7 +304,7 @@ const experience = [
         <div class="card overflow-hidden px-6 py-16 text-center sm:px-12">
           <div class="aurora pointer-events-none absolute inset-0 opacity-60"></div>
           <h2 class="relative text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            Let's build something <span class="font-serif font-normal italic text-gradient">together</span>
+            Let's grow your business, <span class="font-serif font-normal italic text-gradient">together</span>
           </h2>
           <p class="relative mx-auto mt-5 max-w-xl text-mist">
             Need AI systems built, a strategic tech roadmap, vetted developers, or a growth partner? Reach out — I'd love to hear what you're working on.
@@ -315,7 +315,12 @@ const experience = [
                 href={s.href}
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 px-6 py-3 text-sm font-semibold text-ink shadow-[0_8px_30px_-8px_rgb(52_211_153/0.6)] transition hover:brightness-110"
+                class:list={[
+                  "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm transition",
+                  ["LinkedIn", "Threads"].includes(s.label)
+                    ? "bg-gradient-to-r from-emerald-400 to-teal-400 font-semibold text-ink shadow-[0_8px_30px_-8px_rgb(52_211_153/0.6)] hover:brightness-110"
+                    : "border border-line bg-white/[0.03] font-medium text-slate-200 hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-white",
+                ]}
               >
                 <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>
                 Message me on {s.label}
