@@ -34,6 +34,14 @@ const socials = [
   },
 ];
 
+const stats = [
+  { value: "16+", label: "years experience" },
+  { value: "DE · SG", label: "Germany & Singapore" },
+  { value: "Max Planck", label: "Institute alumnus" },
+];
+
+const formerEmployers = ["Alibaba/Lazada", "AstraZeneca", "Traveloka", "Doctor Anywhere"];
+
 const offerings = [
   { title: "Strategic Consulting", desc: "Tech roadmaps and digital strategy to scale your business." },
   { title: "Developer Sourcing", desc: "Recruiting vetted technical talent to execute your vision." },
@@ -145,29 +153,34 @@ const experience = [
             <span class="mt-2 inline-block font-serif text-4xl leading-[1.1] font-normal italic sm:text-[3.5rem]"><span class="text-gradient">Full-Stack AI Solopreneur <br />&amp; Strategic Partner<span class="sr-only">.</span></span></span>
           </h1>
           <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-200 sm:text-xl">
-            I help businesses unlock exponential growth by combining high-level AI consulting with custom software development.
-            I work closely with you as an advisory and technical partner to architect and deliver robust products and secure,
-            scalable AI ecosystems—driving business growth and multiplying your output without expanding your team.
+            I help businesses grow faster by combining strategic AI consulting with custom software development.
+            As your advisory and technical partner, I architect and deliver secure, scalable AI systems and
+            products—multiplying your output without expanding your team.
           </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 px-6 py-3 text-sm font-semibold text-ink shadow-[0_8px_30px_-8px_rgb(52_211_153/0.6)] transition hover:brightness-110">Let's talk →</a>
+            <a href="#services" class="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 transition hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-white">See services</a>
+          </div>
         </div>
 
         <div class="rise" style="--d: 0.2s">
-          <p class="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
-            I am a Tech Entrepreneur and <span class="text-slate-200">AI Engineer & Data Scientist</span> with 16+ years
-            of professional experience driving impactful tech solutions across Germany and Singapore. My career spans
-            high-impact roles at tech giants and global enterprises like <span class="text-slate-200">Alibaba/Lazada</span>,{" "}
-            <span class="text-slate-200">AstraZeneca</span>, and <span class="text-slate-200">Traveloka</span>.
+          <div class="mx-auto mt-14 grid max-w-2xl grid-cols-3 divide-x divide-line">
+            {stats.map((st) => (
+              <div class="px-2">
+                <p class="font-serif text-2xl italic text-gradient sm:text-4xl">{st.value}</p>
+                <p class="mt-1 text-xs text-mist sm:text-sm">{st.label}</p>
+              </div>
+            ))}
+          </div>
+          <p class="mt-10 text-xs font-medium tracking-widest text-mist uppercase">Previously at</p>
+          <p class="mx-auto mt-3 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 font-medium text-slate-300">
+            {formerEmployers.map((name) => <span>{name}</span>)}
           </p>
-          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
-            As a solopreneur, I fully architected, full-stack engineered, and launched{" "}
-            <a href="https://mybankstatementconverter.com" target="_blank" rel="noopener" class="text-emerald-300 underline decoration-emerald-400/30 underline-offset-4 hover:decoration-emerald-300">MyBankStatementConverter.com</a>.
-            Built from the ground up to be privacy-first, I designed the entire platform with strict security and
-            encryption protocols to process sensitive financial data seamlessly and securely.
-          </p>
-          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
-            A graduate and former researcher of the <span class="text-slate-200">Max Planck Institute for Informatics</span>,
-            I build robust, production-grade systems. Outside of engineering, I channel my creativity into drawing and
-            painting.
+          <p class="mx-auto mt-10 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
+            As a founder, I single-handedly designed, built and launched{" "}
+            <a href="https://mybankstatementconverter.com" target="_blank" rel="noopener" class="text-emerald-300 underline decoration-emerald-400/30 underline-offset-4 hover:decoration-emerald-300">MyBankStatementConverter.com</a>{" "}
+            — a privacy-first platform that processes sensitive financial data under strict security and encryption.
+            Outside of work, I draw and paint.
           </p>
         </div>
 
@@ -186,9 +199,6 @@ const experience = [
               </a>
             ))}
           </div>
-          <p class="mx-auto mt-8 max-w-xl text-sm text-mist">
-            Looking to scale with a strategic consultant, hire top developers, or explore a partnership? <a href="#contact" class="font-medium text-emerald-300 hover:text-emerald-200">Let's talk →</a>
-          </p>
         </div>
       </div>
     </section>
