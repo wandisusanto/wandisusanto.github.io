@@ -44,27 +44,32 @@ const offerings = [
 const services = [
   {
     title: "AI & Machine Learning",
-    desc: "Autonomous multi-agent systems, chatbots, hyper-personalization, recommendation, forecasting, NLP, computer vision and LLM-powered features — designed, trained and shipped to production.",
+    tagline: "Intelligent automation and predictive insights for smarter business decisions.",
+    desc: "From chatbots and autonomous AI agents to personalized recommendations, forecasting and computer vision — practical AI that saves your team time and grows revenue, built securely for production.",
     icon: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/>',
   },
   {
     title: "Fullstack Web & Mobile Apps",
-    desc: "From idea to production: modern web apps, mobile apps, APIs and the cloud infrastructure behind them.",
+    tagline: "Modern custom software built around how your business actually works.",
+    desc: "Customer-facing apps, internal tools and client portals — taken from idea to launch, on reliable cloud infrastructure that grows with you.",
     icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
   },
   {
     title: "E-commerce Stores",
-    desc: "Fast, conversion-focused online stores with payments, inventory and the integrations you need to sell.",
+    tagline: "High-performance digital storefronts designed to convert and scale.",
+    desc: "Fast, polished online stores with secure payments, inventory and the integrations you need — so more visitors become paying customers.",
     icon: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
   },
   {
     title: "Data Science & Analytics",
-    desc: "Turn raw data into decisions: pipelines, experimentation, dashboards and models that move metrics.",
+    tagline: "Turning your business data into actionable growth strategies.",
+    desc: "Clear dashboards, reliable reporting and models that show what's working, what isn't, and where your next opportunity is.",
     icon: '<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
   },
   {
     title: "Workflow Automation",
-    desc: "Automate the repetitive work — connect your tools, eliminate manual steps and free up your team.",
+    tagline: "Streamlining operations to reduce costs and eliminate manual work.",
+    desc: "Connect the tools you already use and automate repetitive tasks — fewer errors, faster turnaround, and a team free to focus on growth.",
     icon: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
   },
 ];
@@ -210,7 +215,8 @@ const experience = [
                   <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={s.icon} />
                 </div>
                 <h3 class="mt-5 text-lg font-medium text-white">{s.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-mist">{s.desc}</p>
+                <p class="mt-2 text-sm font-medium text-emerald-300">{s.tagline}</p>
+                <p class="mt-3 text-sm leading-relaxed text-mist">{s.desc}</p>
               </article>
             </div>
           ))}
