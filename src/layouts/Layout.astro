@@ -62,6 +62,20 @@ const person = {
     <meta name="twitter:site" content="@wandikang" />
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <script is:inline>
+      // Apply the saved theme (else the OS preference) before first paint so there's no flash.
+      function setTheme(t) {
+        document.documentElement.dataset.theme = t;
+        document.querySelector('meta[name="theme-color"]').content = t === "light" ? "#f8fafc" : "#07090c";
+      }
+      function toggleTheme() {
+        const t = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        setTheme(t);
+        try { localStorage.theme = t; } catch {}
+      }
+      let saved;
+      try { saved = localStorage.theme; } catch {}
+      setTheme(saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"));
+
       // Hide .reveal elements only when JS runs, then fade each in as it scrolls into view.
       document.documentElement.classList.add("js");
       addEventListener("DOMContentLoaded", () => {
