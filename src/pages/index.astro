@@ -48,37 +48,31 @@ const offerings = [
   { title: "Partnerships & Growth", desc: "Exploring joint ventures and collaborative business growth." },
 ];
 
-// Icon bodies are Lucide (24x24, stroke) paths.
 const services = [
   {
     title: "AI & Machine Learning",
     tagline: "Intelligent automation and predictive insights for smarter business decisions.",
     desc: "From chatbots and autonomous AI agents to personalized recommendations, forecasting and computer vision — practical AI that saves your team time and grows revenue, built securely for production.",
-    icon: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/>',
   },
   {
     title: "Custom Web & Mobile Apps",
     tagline: "Modern custom software built around how your business actually works.",
     desc: "Customer-facing apps, internal tools and client portals — taken from idea to launch, on reliable cloud infrastructure that grows with you.",
-    icon: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/>',
   },
   {
     title: "E-commerce Stores",
     tagline: "High-performance digital storefronts designed to convert and scale.",
     desc: "Fast, polished online stores with secure payments, inventory and the integrations you need — so more visitors become paying customers.",
-    icon: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
   },
   {
     title: "Data Science & Analytics",
     tagline: "Turning your business data into actionable growth strategies.",
     desc: "Clear dashboards, reliable reporting and models that show what's working, what isn't, and where your next opportunity is.",
-    icon: '<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
   },
   {
     title: "Workflow Automation",
     tagline: "Streamlining operations to reduce costs and eliminate manual work.",
     desc: "Connect the tools you already use and automate repetitive tasks — fewer errors, faster turnaround, and a team free to focus on growth.",
-    icon: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
   },
 ];
 
@@ -92,6 +86,7 @@ const projects = [
 ];
 
 const experience = [
+  { org: "Nova Vision Technology", role: "Founder & CEO", location: "Indonesia" },
   { org: "MyBankStatementConverter.com", role: "Founder & solopreneur" },
   { org: "Doctor Anywhere", role: "Head of AI & Data Science", location: "Singapore" },
   { org: "Alibaba / Lazada", role: "Senior Manager, Machine Learning & Data Science", location: "Singapore" },
@@ -110,7 +105,7 @@ const experience = [
         <ul class="hidden gap-8 text-sm text-mist md:flex">
           {nav.map((n) => <li><a href={n.href} class="transition-colors hover:text-fg">{n.label}</a></li>)}
         </ul>
-        <button type="button" onclick="toggleTheme()" class="rounded-lg p-2 text-mist transition-colors hover:text-fg md:-mr-2" aria-label="Toggle light/dark theme">
+        <button type="button" onclick="toggleTheme()" data-theme-toggle aria-pressed="false" class="rounded-lg p-2 text-mist transition-colors hover:text-fg md:-mr-2" aria-label="Light theme">
           <svg class="size-5 light:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
           <svg class="hidden size-5 light:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
         </button>
@@ -128,47 +123,39 @@ const experience = [
 
   <main>
     <!-- Hero / About -->
-    <section
-      id="about"
-      class="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32"
-      onpointermove="const r = this.getBoundingClientRect(); this.style.setProperty('--x', event.clientX - r.left + 'px'); this.style.setProperty('--y', event.clientY - r.top + 'px')"
-    >
+    <section id="about" class="relative overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32">
       <div class="pointer-events-none absolute inset-0 -z-10">
-        <div class="aurora absolute -inset-x-1/4 -top-1/4 h-[120%]"></div>
-        <div class="grid-bg absolute inset-0"></div>
-        <div class="neural absolute inset-0"></div>
-        <div class="neural spot absolute inset-0"></div>
+        <div class="glow absolute inset-0"></div>
+        <div class="contours absolute inset-0"></div>
+        <div class="grain absolute inset-0"></div>
       </div>
 
       <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
         <div class="rise">
-          <div class="relative mx-auto size-32 sm:size-40">
-            <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-emerald-400 via-teal-400 to-cyan-400 opacity-70 blur-md"></div>
-            <img
-              src={avatar}
-              alt="Portrait of Wandi Susanto"
-              width="160"
-              height="160"
-              fetchpriority="high"
-              class="relative size-full rounded-full border-2 border-ink object-cover"
-            />
-          </div>
+          <img
+            src={avatar}
+            alt="Portrait of Wandi Susanto"
+            width="160"
+            height="160"
+            fetchpriority="high"
+            class="mx-auto size-32 rounded-full object-cover ring-1 ring-line ring-offset-4 ring-offset-ink sm:size-40"
+          />
         </div>
 
         <div class="rise" style="--d: 0.1s">
-          <p class="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-1.5 text-xs font-medium tracking-wide text-accent">
-            <span class="size-1.5 animate-pulse rounded-full bg-emerald-400"></span>
+          <p class="mt-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-xs font-medium tracking-wide text-accent">
+            <span class="size-1.5 rounded-full bg-accent"></span>
             Partnering with select founders & executives
           </p>
           <h1 class="mt-6 text-2xl font-semibold tracking-tight text-fg sm:text-4xl">
             Hi, I’m Wandi.<br />
-            <span class="mt-2 inline-block font-serif text-4xl leading-[1.1] font-normal italic sm:text-[3.5rem]"><span class="text-gradient">AI Architect <br class="sm:hidden" />&amp; Strategic Partner<span class="sr-only">.</span></span></span>
+            <span class="mt-2 inline-block font-serif text-4xl leading-[1.1] font-normal italic sm:text-[3.5rem]">AI Architect <br class="sm:hidden" />&amp; Strategic Partner<span class="sr-only">.</span></span>
           </h1>
           <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-soft sm:text-xl">
             I’m the founder of{" "}
-            <a href="https://novavisiontechnology.com" target="_blank" rel="noopener" class="text-accent underline decoration-emerald-400/30 underline-offset-4 hover:decoration-emerald-300">Nova Vision Technology</a>{" "}
+            <a href="https://novavisiontechnology.com" target="_blank" rel="noopener" class="text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent">Nova Vision Technology</a>{" "}
             and the creator of{" "}
-            <a href="https://mybankstatementconverter.com" target="_blank" rel="noopener" class="text-accent underline decoration-emerald-400/30 underline-offset-4 hover:decoration-emerald-300">MyBankStatementConverter.com</a>.
+            <a href="https://mybankstatementconverter.com" target="_blank" rel="noopener" class="text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent">MyBankStatementConverter.com</a>.
             By combining strategic AI consulting with custom software development, I help businesses optimize their
             operations and unlock their full growth potential.
           </p>
@@ -178,14 +165,14 @@ const experience = [
           <div class="mx-auto mt-14 grid max-w-2xl grid-cols-3 divide-x divide-line">
             {stats.map((st) => (
               <div class="px-2">
-                <p class="font-serif text-2xl italic text-gradient sm:text-4xl">{st.value}</p>
+                <p class="font-serif text-2xl italic text-fg sm:text-4xl">{st.value}</p>
                 <p class="mt-1 text-xs text-mist sm:text-sm">{st.label}</p>
               </div>
             ))}
           </div>
-          <p class="mt-10 text-xs font-medium tracking-widest text-mist uppercase">Previously at</p>
-          <p class="mx-auto mt-3 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 font-medium text-soft">
-            {formerEmployers.map((name) => <span>{name}</span>)}
+          <p class="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-soft">
+            <span class="text-mist">Previously at</span>
+            {formerEmployers.map((name) => <span class="font-medium">{name}</span>)}
           </p>
         </div>
 
@@ -195,8 +182,8 @@ const experience = [
               href="https://novavisiontechnology.com"
               target="_blank"
               rel="noopener"
-              aria-label="Nova Vision Technology"
-              class="group inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-soft transition hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-fg"
+              aria-label="NVT – Nova Vision Technology"
+              class="group inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-soft transition hover:border-accent/40 hover:bg-accent/10 hover:text-fg"
             >
               <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               NVT
@@ -207,7 +194,7 @@ const experience = [
                 target="_blank"
                 rel="noopener"
                 aria-label={s.label}
-                class="group inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-soft transition hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-fg"
+                class="group inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm text-soft transition hover:border-accent/40 hover:bg-accent/10 hover:text-fg"
               >
                 <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>
                 {s.label}
@@ -219,68 +206,57 @@ const experience = [
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-24 sm:py-32">
+    <section id="services" class="py-20 sm:py-28">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="reveal">
-          <p class="text-sm font-medium tracking-widest text-emerald-400 uppercase light:text-accent">Services</p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            From strategy <span class="font-serif font-normal italic text-gradient">to shipped product</span>
+          <h2 class="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+            From strategy <span class="font-serif font-normal italic">to shipped product</span>
           </h2>
           <p class="mt-4 max-w-2xl text-mist">Advise, staff, or build — engage me for one or all three.</p>
         </div>
-        <div class="reveal" style="--d: 0.06s">
-          <div class="card mt-8 grid divide-y divide-line overflow-hidden sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            <span class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent" aria-hidden="true"></span>
-            {offerings.map((o, i) => (
-              <div class="p-6 sm:p-8">
-                <span class="font-serif text-4xl italic text-gradient">{String(i + 1).padStart(2, "0")}</span>
-                <h3 class="mt-4 text-lg font-medium text-fg">{o.title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-mist">{o.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p class="reveal mt-14 text-sm font-medium tracking-widest text-emerald-400 uppercase light:text-accent">What I deliver</p>
-        <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <div class:list={["reveal h-full", i === 0 && "sm:col-span-2"]} style={`--d: ${i * 0.06}s`}>
-              <article class="card h-full p-6">
-                <div class="inline-flex size-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/10 text-accent">
-                  <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={s.icon} />
-                </div>
-                <h3 class="mt-5 text-lg font-medium text-fg">{s.title}</h3>
-                <p class="mt-2 text-sm font-medium text-accent">{s.tagline}</p>
-                <p class="mt-3 text-sm leading-relaxed text-mist">{s.desc}</p>
-              </article>
+        <div class="reveal mt-10 grid divide-y divide-line border-y border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0" style="--d: 0.06s">
+          {offerings.map((o) => (
+            <div class="py-6 sm:px-8 sm:py-8 sm:first:pl-0 sm:last:pr-0">
+              <h3 class="font-serif text-2xl text-fg italic">{o.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-mist">{o.desc}</p>
             </div>
           ))}
         </div>
-        <p class="reveal mt-12 text-center text-sm text-mist">
-          Not sure which fits? We'll map it out together. <a href="#contact" class="font-medium text-accent hover:text-emerald-200 light:hover:text-emerald-900">Let's talk →</a>
+
+        <h3 class="reveal mt-20 text-xl font-medium text-fg">What I deliver</h3>
+        <dl class="mt-6 border-t border-line">
+          {services.map((s, i) => (
+            <div class="reveal grid gap-2 border-b border-line py-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] sm:gap-10 sm:py-8" style={`--d: ${i * 0.05}s`}>
+              <dt class="text-lg font-medium text-fg">{s.title}</dt>
+              <dd>
+                <p class="font-medium text-accent">{s.tagline}</p>
+                <p class="mt-2 max-w-2xl text-sm leading-relaxed text-mist">{s.desc}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p class="reveal mt-10 text-sm text-mist">
+          Not sure which fits? We'll map it out together. <a href="#contact" class="font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent">Let's talk →</a>
         </p>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="py-24 sm:py-32">
+    <section id="projects" class="py-20 sm:py-28">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="reveal">
-          <p class="text-sm font-medium tracking-widest text-emerald-400 uppercase light:text-accent">Projects</p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            Things I've <span class="font-serif font-normal italic text-gradient">shipped</span>
-          </h2>
-        </div>
-        <div class="mt-12 grid gap-5">
+        <h2 class="reveal text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+          Things I've <span class="font-serif font-normal italic">shipped</span>
+        </h2>
+        <div class="mt-10 grid gap-5">
           {projects.map((p) => (
             <div class="reveal">
-              <a href={p.href} target="_blank" rel="noopener" class="card group block overflow-hidden p-6 sm:p-10">
-                <div class="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-emerald-500/20 blur-3xl"></div>
-                <p class="relative text-xs font-medium tracking-widest text-accent uppercase">{p.tag}</p>
-                <h3 class="relative mt-3 flex items-center gap-2 text-xl font-semibold text-fg [overflow-wrap:anywhere] sm:text-3xl">
-                  {p.name}
+              <a href={p.href} target="_blank" rel="noopener" class="card group block p-6 sm:p-10">
+                <p class="text-sm text-accent">{p.tag}</p>
+                <h3 class="mt-3 flex items-center gap-2 text-lg font-semibold text-fg [overflow-wrap:anywhere] sm:text-3xl">
+                  <span>{p.name.split(".").map((part, i) => (i ? <><wbr />.{part}</> : part))}</span>
                   <svg class="size-5 shrink-0 text-mist transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
                 </h3>
-                <p class="relative mt-4 max-w-2xl leading-relaxed text-mist">{p.desc}</p>
+                <p class="mt-4 max-w-2xl leading-relaxed text-mist">{p.desc}</p>
               </a>
             </div>
           ))}
@@ -289,18 +265,15 @@ const experience = [
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="py-24 sm:py-32">
-      <div class="mx-auto max-w-3xl px-4 sm:px-6">
-        <div class="reveal">
-          <p class="text-sm font-medium tracking-widest text-emerald-400 uppercase light:text-accent">Experience</p>
-          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            16+ years across <span class="font-serif font-normal italic text-gradient">Germany & Singapore</span>
-          </h2>
-        </div>
-        <ol class="relative mt-12 border-l border-line pl-8">
+    <section id="experience" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="reveal text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+          16+ years across <span class="font-serif font-normal italic">Germany & Singapore</span>
+        </h2>
+        <ol class="relative mt-10 max-w-3xl border-l border-line pl-8">
           {experience.map((e, i) => (
             <li class="relative pb-10 last:pb-0">
-              <span class="absolute top-1.5 -left-[37px] size-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_var(--color-ink),0_0_16px_rgb(52_211_153/0.7)]"></span>
+              <span class="absolute top-2 -left-[36px] size-2 rounded-full bg-accent shadow-[0_0_0_4px_var(--color-ink)]"></span>
               <div class="reveal" style={`--d: ${i * 0.05}s`}>
                 <h3 class="text-lg font-medium text-fg [overflow-wrap:anywhere]">{e.org}</h3>
                 <p class="mt-1 text-sm text-soft">
@@ -314,12 +287,12 @@ const experience = [
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="px-4 py-24 sm:px-6 sm:py-32">
+    <section id="contact" class="px-4 py-20 sm:px-6 sm:py-28">
       <div class="reveal mx-auto max-w-4xl">
         <div class="card overflow-hidden px-6 py-16 text-center sm:px-12">
-          <div class="aurora pointer-events-none absolute inset-0 opacity-60"></div>
+          <div class="glow pointer-events-none absolute inset-0"></div>
           <h2 class="relative text-3xl font-semibold tracking-tight text-fg sm:text-5xl">
-            Let's grow your business, <span class="font-serif font-normal italic text-gradient">together</span>
+            Let's grow your business, <span class="font-serif font-normal italic">together</span>
           </h2>
           <p class="relative mx-auto mt-5 max-w-xl text-mist">
             Need AI systems built, a strategic tech roadmap, vetted developers, or a growth partner? Reach out — I'd love to hear what you're working on.
@@ -333,8 +306,8 @@ const experience = [
                 class:list={[
                   "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm transition",
                   ["LinkedIn", "Threads"].includes(s.label)
-                    ? "bg-gradient-to-r from-emerald-400 to-teal-400 font-semibold text-slate-950 shadow-[0_8px_30px_-8px_rgb(52_211_153/0.6)] hover:brightness-110"
-                    : "border border-line bg-surface font-medium text-soft hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-fg",
+                    ? "bg-accent font-semibold text-ink hover:opacity-90"
+                    : "border border-line bg-surface font-medium text-soft hover:border-accent/40 hover:bg-accent/10 hover:text-fg",
                 ]}
               >
                 <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>

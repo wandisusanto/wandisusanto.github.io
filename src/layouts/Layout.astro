@@ -66,6 +66,7 @@ const person = {
       function setTheme(t) {
         document.documentElement.dataset.theme = t;
         document.querySelector('meta[name="theme-color"]').content = t === "light" ? "#f8fafc" : "#07090c";
+        document.querySelector("[data-theme-toggle]")?.setAttribute("aria-pressed", t === "light");
       }
       function toggleTheme() {
         const t = document.documentElement.dataset.theme === "light" ? "dark" : "light";
@@ -79,6 +80,7 @@ const person = {
       // Hide .reveal elements only when JS runs, then fade each in as it scrolls into view.
       document.documentElement.classList.add("js");
       addEventListener("DOMContentLoaded", () => {
+        setTheme(document.documentElement.dataset.theme);
         const io = new IntersectionObserver(
           (entries) =>
             entries.forEach((e) => {
